@@ -35,8 +35,8 @@ const PopUpIntro = ({ props }) => {
       {nextSlide ? (
         <animated.div id="popUpFirst" style={anim}>
           <div id="img-container">
-            <img src={woman} />
-            <img src={fridge} />
+            <img src={woman} alt="woman" />
+            <img src={fridge} alt="empty_fridge" />
           </div>
           <h3>Don't let important things fall out of your head</h3>
           <h4>

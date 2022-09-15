@@ -12,6 +12,7 @@ nav#menu {
   border-radius: 20px 0 0 20px;
   color: #ffffff;
   align-items: center;
+  gap: 10px;
 }
 nav#menu h3 {
   font-size: 30px;
@@ -27,11 +28,14 @@ nav#menu a {
   transition: 0.3s;
 }
 nav#menu a.active {
-  transform: translateX(15px);
+  transform: translateX(25px);
 }
 nav#menu a:hover {
-  transform: translateX(15px);
+  transform: translateX(25px);
 }
 nav#menu svg {
   font-size: 46px;
+}
+nav#menu a:hover ~ svg {
+  transform: rotate(10deg);
 }
