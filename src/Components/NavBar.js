@@ -20,7 +20,7 @@ const NavBar = () => {
       </NavLink>
       <NavLink to="/shoping-list">
         <ShoppingCartIcon />
-        <h4>Shoping</h4>
+        <h4>Shopping</h4>
       </NavLink>
       <NavLink to="/settings">
         <SettingsIcon />

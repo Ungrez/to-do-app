@@ -13,6 +13,8 @@ nav#menu {
   color: #ffffff;
   align-items: center;
   gap: 10px;
+  animation: cardSlide 2s linear;
+  box-shadow: 15px 0 20px -15px black;
 }
 nav#menu h3 {
   font-size: 30px;
@@ -26,16 +28,52 @@ nav#menu a {
   display: flex;
   align-items: center;
   transition: 0.3s;
+  animation: showNav 1.5s linear;
 }
 nav#menu a.active {
-  transform: translateX(25px);
+  transform: translateX(15px);
+  animation: showNavActive 1s linear;
 }
 nav#menu a:hover {
-  transform: translateX(25px);
+  transform: translateX(15px);
 }
 nav#menu svg {
   font-size: 46px;
 }
-nav#menu a:hover ~ svg {
+nav#menu a:hover svg {
   transform: rotate(10deg);
+  transition: 0.5s;
+}
+nav#menu a:hover:nth-child(5) svg {
+  transform: rotate(180deg);
+}
+@keyframes showNav {
+  from {
+    opacity: 0;
+    transform: translateX(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes showNavActive {
+  from {
+    opacity: 0;
+    transform: translateX(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(15px);
+  }
+}
+@keyframes cardSlide {
+  from {
+    opacity: 0.8;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
 }

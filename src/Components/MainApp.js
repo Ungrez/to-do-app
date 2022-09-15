@@ -3,15 +3,20 @@ import "../styles/MainApp.css";
 import NavBar from "./NavBar";
 import Page from "./Page";
 import { BrowserRouter as Router } from "react-router-dom";
+import { useSpring, animated } from "react-spring";
 
 const MainApp = () => {
+  const [show, setShow] = useSpring(() => ({
+    from: { opacity: "0", top: "0" },
+    to: { opacity: "1", top: "50%" },
+  }));
   return (
-    <main id="container">
+    <animated.main id="container" style={show}>
       <Router>
         <NavBar />
         <Page />
       </Router>
-    </main>
+    </animated.main>
   );
 };
 

@@ -9,4 +9,13 @@ main#container {
   transform: translate(-50%, -50%);
   box-shadow: 0 0 15px -8px black;
   border-radius: 20px;
+  animation: mainCont 3s linear;
+}
+@keyframes mainCont {
+  from {
+    box-shadow: none;
+  }
+  to {
+    box-shadow: 0 0 15px -8px black;
+  }
 }

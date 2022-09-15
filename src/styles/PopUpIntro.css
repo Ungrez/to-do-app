@@ -67,3 +67,30 @@ div#popUpFirst div#img-container img:nth-child(2) {
     transform: rotate(-1deg);
   }
 }
+
+@media (orientation: portrait) {
+  div#popUpFirst {
+    height: 100vh;
+    width: 100vw;
+    padding: 20px;
+  }
+  div#popUpFirst:hover {
+    box-shadow: none;
+  }
+  div#popUpFirst h1 {
+    font-size: 42px;
+  }
+  div#popUpFirst h2 {
+    font-size: 18px;
+  }
+  div#popUpFirst h3 {
+    padding: 10px;
+  }
+  div#popUpFirst h4 {
+    padding: 0 20px;
+  }
+  div#popUpFirst Button#start {
+    margin-top: 20px;
+    align-self: center;
+  }
+}
