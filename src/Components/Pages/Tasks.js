@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import "../../styles/Interface/Pages/Tasks.css";
 import TaskList from "./TasksList";
+import { v4 as uuidv4 } from "uuid";
 
 const Tasks = () => {
   const [inputValue, setInputValue] = useState("");
@@ -20,6 +21,7 @@ const Tasks = () => {
       {
         title: inputValue,
         priority: importance,
+        id: uuidv4(),
       },
     ];
   };
