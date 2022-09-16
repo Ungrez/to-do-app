@@ -1,8 +1,20 @@
-div#task-list {
+div#table {
   margin-top: 50px;
   display: flex;
+  padding: 10px 50px;
+}
+div#table h4:nth-child(1) {
+  flex-basis: 50%;
+}
+div#table h4:nth-child(2) {
+  min-width: 100px;
+  text-align: center;
+}
+
+div#task-list {
+  display: flex;
   flex-direction: column;
-  padding: 50px;
+  padding: 10px 50px 50px;
   gap: 10px;
 }
 div#task-list li {
@@ -13,6 +25,21 @@ div#task-list li button {
   margin-left: 10px;
 }
 div#task-list li div#task {
-  flex-grow: 1;
+  flex-basis: 50%;
   align-self: center;
+}
+div#task-list li div#priority {
+  min-width: 100px;
+  text-align: center;
+  align-self: center;
+  font-size: 16px;
+}
+div#task-list div.Low {
+  color: green;
+}
+div#task-list div.Medium {
+  color: orange;
+}
+div#task-list div.High {
+  color: red;
 }

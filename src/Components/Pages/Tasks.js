@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import {
   FormControl,
   InputLabel,
@@ -14,12 +14,35 @@ const Tasks = () => {
   const [inputValue, setInputValue] = useState("");
   const [importance, setImportance] = useState("");
 
+  const reducer = (tasks) => {
+    return [
+      ...tasks,
+      {
+        title: inputValue,
+        priority: importance,
+      },
+    ];
+  };
+
+  const [tasks, dispatch] = useReducer(reducer, [], () => {
+    const localData = localStorage.getItem("tasks");
+    return localData ? JSON.parse(localData) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
+
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
   };
 
   const handleSelectChange = (e) => {
     setImportance(e.target.value);
+  };
+
+  const handleAddTask = () => {
+    dispatch();
   };
 
   return (
@@ -29,18 +52,18 @@ const Tasks = () => {
           id="outlined-basic"
           label="Add new task"
           variant="outlined"
-          sx={{ minWidth: 550 }}
+          sx={{ minWidth: 650 }}
           value={inputValue}
           onChange={handleInputChange}
         />
-        <FormControl sx={{ m: 1, minWidth: 120 }}>
+        <FormControl sx={{ m: 1, width: 200 }}>
           <InputLabel id="demo-simple-select-helper-label">Priority</InputLabel>
           <Select
             labelId="demo-simple-select-helper-label"
             id="demo-simple-select-helper"
             label="Priority"
             value={importance}
-            sx={{ width: 140 }}
+            sx={{ width: 100 }}
             onChange={handleSelectChange}
           >
             <MenuItem value="">None</MenuItem>
@@ -49,11 +72,11 @@ const Tasks = () => {
             <MenuItem value="High">High</MenuItem>
           </Select>
         </FormControl>
-        <Button id="start" variant="contained">
+        <Button onClick={handleAddTask} id="start" variant="contained">
           Add task
         </Button>
       </div>
-      <TaskList />
+      <TaskList props={{ tasks }} />
     </>
   );
 };
