@@ -23,13 +23,12 @@ const PopUpIntro = ({ props }) => {
 
   const startMain = () => {
     setAnim.start({ from: { top: "50%" }, to: { top: "250%" } });
-    console.log(anim);
     setTimeout(() => {
       props.setNextSlide(true);
-      console.log(anim);
       setAnim.stop();
     }, 1200);
   };
+
   return (
     <>
       {nextSlide ? (
