@@ -29,7 +29,7 @@ const Tasks = () => {
           id="outlined-basic"
           label="Add new task"
           variant="outlined"
-          sx={{ minWidth: 450 }}
+          sx={{ minWidth: 550 }}
           value={inputValue}
           onChange={handleInputChange}
         />

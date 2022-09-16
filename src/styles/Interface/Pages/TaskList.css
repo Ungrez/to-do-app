@@ -1,0 +1,18 @@
+div#task-list {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  gap: 10px;
+}
+div#task-list li {
+  display: flex;
+  justify-content: flex-start;
+}
+div#task-list li button {
+  margin-left: 10px;
+}
+div#task-list li div#task {
+  flex-grow: 1;
+  align-self: center;
+}
