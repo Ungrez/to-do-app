@@ -46,6 +46,12 @@ const Tasks = () => {
           onChange={(e) => {
             setInputValue(e.target.value);
           }}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" && inputValue) {
+              dispatch({ type: "ADD_TASK", inputValue, importance });
+              setInputValue("");
+            }
+          }}
         />
         <FormControl sx={{ m: 1, width: 200 }}>
           <InputLabel id="demo-simple-select-helper-label">Priority</InputLabel>
