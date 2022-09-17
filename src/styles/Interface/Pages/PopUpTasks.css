@@ -1,0 +1,56 @@
+div#popUpTasks {
+  display: flex;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 40vw;
+  height: 60vh;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  z-index: 2;
+  box-shadow: 0 0 15px -8px black;
+  border-radius: 20px;
+  justify-content: space-between;
+  padding: 10px;
+  overflow: auto;
+}
+div#popUpTasks::-webkit-scrollbar-track-piece:end {
+  background: transparent;
+  margin-bottom: 20px;
+}
+div#popUpTasks::-webkit-scrollbar-track-piece:start {
+  background-color: transparent;
+  margin-top: 20px;
+}
+div#popUpTasks svg {
+  cursor: pointer;
+  transition: 0.2s;
+}
+div#popUpTasks svg:hover {
+  color: red;
+}
+div#popUpTasks div#showTasks {
+  flex-grow: 1;
+  padding: 20px;
+}
+div#popUpTasks div#showTasks h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+div#popUpTasks div#showTasks ul {
+  list-style: decimal;
+  padding-left: 30px;
+}
+
+div#popUpTasks div#showTasks li {
+  display: list-item;
+  padding: 10px 0 10px 10px;
+  font-size: 18px;
+  width: 100%;
+}
+div#showTasks li.successedTasks {
+  color: green;
+}
+div#showTasks li.deletedTasks {
+  color: rgb(181, 33, 33);
+}

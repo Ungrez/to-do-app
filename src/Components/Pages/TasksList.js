@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import DeleteIcon from "@mui/icons-material/Delete";
+import PopUpTasks from "./PopUpTasks";
 import "../../styles/Interface/Pages/TaskList.css";
 
 const TaskList = ({ props }) => {
+  const [popUp, setPopUp] = useState({ show: false, type: "" });
+
   const tasks = props.tasks;
   const { dispatch, setDelTasks, delTasks, succTasks, setSuccTasks } = props;
 
@@ -50,11 +53,20 @@ const TaskList = ({ props }) => {
           variant="text"
           aria-label="text button group"
         >
-          <Button onClick={() => console.log(tasks)}>Successed tasks</Button>
-          <Button>Deleted tasks</Button>
+          <Button onClick={() => setPopUp({ show: true, type: "Successed" })}>
+            Successed tasks {succTasks.length}
+          </Button>
+          <Button onClick={() => setPopUp({ show: true, type: "Deleted" })}>
+            Deleted tasks {delTasks.length}
+          </Button>
         </ButtonGroup>
       </div>
-      <div id="task-list">{taskList}</div>
+      <div id="task-list">
+        {taskList}
+        {popUp.show ? (
+          <PopUpTasks props={{ setPopUp, popUp, delTasks, succTasks }} />
+        ) : null}
+      </div>
     </>
   );
 };

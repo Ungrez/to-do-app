@@ -16,19 +16,20 @@ div#table h4:nth-child(2) {
 div#table div.group {
   width: 100%;
 }
-
 div#task-list {
   display: flex;
   flex-direction: column;
   padding: 10px 50px 50px;
   gap: 10px;
+  max-height: 70%;
+  overflow: auto;
 }
 div#task-list li {
   display: flex;
   justify-content: flex-start;
 }
-div#task-list li button {
-  margin-left: 10px;
+div#task-list li button:nth-child(3) {
+  margin: auto;
 }
 div#task-list li div#task {
   flex-basis: 50%;
