@@ -44,7 +44,7 @@ const Tasks = () => {
   };
 
   const handleAddTask = () => {
-    dispatch();
+    if (inputValue) return dispatch();
   };
 
   return (
