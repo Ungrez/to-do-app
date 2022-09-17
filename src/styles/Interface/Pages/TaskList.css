@@ -3,12 +3,18 @@ div#table {
   display: flex;
   padding: 10px 50px;
 }
+div#table h4 {
+  align-self: center;
+}
 div#table h4:nth-child(1) {
   flex-basis: 50%;
 }
 div#table h4:nth-child(2) {
   min-width: 100px;
   text-align: center;
+}
+div#table div.group {
+  width: 100%;
 }
 
 div#task-list {

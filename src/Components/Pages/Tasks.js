@@ -9,22 +9,19 @@ import {
 } from "@mui/material";
 import "../../styles/Interface/Pages/Tasks.css";
 import TaskList from "./TasksList";
-import { v4 as uuidv4 } from "uuid";
+import { reducer } from "../TasksReducer";
 
 const Tasks = () => {
   const [inputValue, setInputValue] = useState("");
   const [importance, setImportance] = useState("");
-
-  const reducer = (tasks) => {
-    return [
-      ...tasks,
-      {
-        title: inputValue,
-        priority: importance,
-        id: uuidv4(),
-      },
-    ];
-  };
+  const [delTasks, setDelTasks] = useState(() => {
+    const localData = localStorage.getItem("delTasks");
+    return localData ? JSON.parse(localData) : [];
+  });
+  const [succTasks, setSuccTasks] = useState(() => {
+    const localData = localStorage.getItem("succTasks");
+    return localData ? JSON.parse(localData) : [];
+  });
 
   const [tasks, dispatch] = useReducer(reducer, [], () => {
     const localData = localStorage.getItem("tasks");
@@ -32,20 +29,10 @@ const Tasks = () => {
   });
 
   useEffect(() => {
+    localStorage.setItem("succTasks", JSON.stringify(succTasks));
+    localStorage.setItem("delTasks", JSON.stringify(delTasks));
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
-
-  const handleInputChange = (e) => {
-    setInputValue(e.target.value);
-  };
-
-  const handleSelectChange = (e) => {
-    setImportance(e.target.value);
-  };
-
-  const handleAddTask = () => {
-    if (inputValue) return dispatch();
-  };
 
   return (
     <>
@@ -56,7 +43,9 @@ const Tasks = () => {
           variant="outlined"
           sx={{ minWidth: 650 }}
           value={inputValue}
-          onChange={handleInputChange}
+          onChange={(e) => {
+            setInputValue(e.target.value);
+          }}
         />
         <FormControl sx={{ m: 1, width: 200 }}>
           <InputLabel id="demo-simple-select-helper-label">Priority</InputLabel>
@@ -66,7 +55,9 @@ const Tasks = () => {
             label="Priority"
             value={importance}
             sx={{ width: 100 }}
-            onChange={handleSelectChange}
+            onChange={(e) => {
+              setImportance(e.target.value);
+            }}
           >
             <MenuItem value="">None</MenuItem>
             <MenuItem value="Low">Low</MenuItem>
@@ -74,11 +65,29 @@ const Tasks = () => {
             <MenuItem value="High">High</MenuItem>
           </Select>
         </FormControl>
-        <Button onClick={handleAddTask} id="start" variant="contained">
+        <Button
+          onClick={() => {
+            if (inputValue) {
+              dispatch({ type: "ADD_TASK", inputValue, importance });
+              setInputValue("");
+            }
+          }}
+          id="start"
+          variant="contained"
+        >
           Add task
         </Button>
       </div>
-      <TaskList props={{ tasks }} />
+      <TaskList
+        props={{
+          tasks,
+          dispatch,
+          setDelTasks,
+          delTasks,
+          setSuccTasks,
+          succTasks,
+        }}
+      />
     </>
   );
 };
