@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Tasks from "./Pages/Tasks";
-import Stats from "./Pages/Stats";
+import Stats from "./Pages/Stats/Stats";
 import ShopingList from "./Pages/ShopingList";
 import Settings from "./Pages/Settings";
 import "../styles/Interface/Page.css";

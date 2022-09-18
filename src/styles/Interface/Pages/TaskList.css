@@ -50,3 +50,6 @@ div#task-list div.Medium {
 div#task-list div.High {
   color: red;
 }
+div#task-list li.deleted-task {
+  background-color: #000000;
+}

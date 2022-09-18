@@ -7,7 +7,6 @@ import "../../styles/Interface/Pages/TaskList.css";
 
 const TaskList = ({ props }) => {
   const [popUp, setPopUp] = useState({ show: false, type: "" });
-  const [open, setOpen] = useState(false);
 
   const tasks = props.tasks;
   const { dispatch, setDelTasks, delTasks, succTasks, setSuccTasks } = props;
