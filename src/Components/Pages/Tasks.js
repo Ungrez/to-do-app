@@ -10,7 +10,6 @@ import {
 import "../../styles/Interface/Pages/Tasks.css";
 import TaskList from "./TasksList";
 import { reducer } from "../TasksReducer";
-import { FetchData } from "./Stats/Data";
 
 const Tasks = () => {
   const [inputValue, setInputValue] = useState("");
@@ -34,8 +33,7 @@ const Tasks = () => {
     localStorage.setItem("succTasks", JSON.stringify(succTasks));
     localStorage.setItem("delTasks", JSON.stringify(delTasks));
     localStorage.setItem("tasks", JSON.stringify(tasks));
-    FetchData(delTasks, succTasks);
-  }, [tasks]);
+  }, [tasks, delTasks, succTasks]);
 
   return (
     <>
