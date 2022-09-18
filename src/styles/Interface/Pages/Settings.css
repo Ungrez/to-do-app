@@ -1,0 +1,20 @@
+div#settings {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+div#settings h2 {
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+div#settings div.placeButtons {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+div#settings div.placeButtons button {
+  flex-basis: 20%;
+  margin-right: 20px;
+}

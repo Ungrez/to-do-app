@@ -33,7 +33,6 @@ const Tasks = () => {
     localStorage.setItem("succTasks", JSON.stringify(succTasks));
     localStorage.setItem("delTasks", JSON.stringify(delTasks));
     localStorage.setItem("tasks", JSON.stringify(tasks));
-    console.log(tasks);
   }, [tasks]);
 
   return (
