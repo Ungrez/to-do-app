@@ -1,11 +1,17 @@
 import React from "react";
 import "../../styles/Interface/Pages/PopUpTasks.css";
 import CloseIcon from "@mui/icons-material/Close";
+import { useSpring, animated } from "react-spring";
 
 const PopUpTasks = ({ props }) => {
   const { delTasks, succTasks, popUp, setPopUp } = props;
+  const [showTasksList, setTasksList] = useSpring(() => ({
+    from: { opacity: "0", top: "0" },
+    to: { opacity: "1", top: "50%" },
+  }));
+
   return (
-    <div id="popUpTasks">
+    <animated.div style={showTasksList} id="popUpTasks">
       <div id="showTasks">
         <h3>{popUp.type} Tasks</h3>
         <ul>
@@ -25,10 +31,16 @@ const PopUpTasks = ({ props }) => {
       <CloseIcon
         sx={{ fontSize: "50px" }}
         onClick={() => {
-          setPopUp({ show: false, type: "" });
+          setTasksList.start({
+            to: { opacity: "0", top: "0" },
+            from: { opacity: "1", top: "50%" },
+          });
+          setTimeout(() => {
+            setPopUp(false);
+          }, 700);
         }}
       ></CloseIcon>
-    </div>
+    </animated.div>
   );
 };
 

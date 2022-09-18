@@ -1,6 +1,16 @@
 import React from "react";
 const Settings = () => {
-  return <h1>Settings</h1>;
+  return (
+    <div>
+      <button
+        onClick={() => {
+          localStorage.removeItem("delTasks");
+        }}
+      >
+        Czyść deleted
+      </button>
+    </div>
+  );
 };
 
 export default Settings;

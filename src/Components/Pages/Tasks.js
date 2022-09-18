@@ -14,6 +14,7 @@ import { reducer } from "../TasksReducer";
 const Tasks = () => {
   const [inputValue, setInputValue] = useState("");
   const [importance, setImportance] = useState("");
+
   const [delTasks, setDelTasks] = useState(() => {
     const localData = localStorage.getItem("delTasks");
     return localData ? JSON.parse(localData) : [];
@@ -32,6 +33,7 @@ const Tasks = () => {
     localStorage.setItem("succTasks", JSON.stringify(succTasks));
     localStorage.setItem("delTasks", JSON.stringify(delTasks));
     localStorage.setItem("tasks", JSON.stringify(tasks));
+    console.log(tasks);
   }, [tasks]);
 
   return (
