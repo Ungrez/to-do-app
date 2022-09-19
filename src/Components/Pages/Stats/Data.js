@@ -1,4 +1,6 @@
-export const FetchData = () => {
+import { ActionTypes } from "@mui/base";
+
+export const FetchData = (action) => {
   const storage = localStorage.getItem("dateTask");
   let data = new Date();
   let day = data.getDate();

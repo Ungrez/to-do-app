@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Doughnut } from "react-chartjs-2";
+import { Bar } from "react-chartjs-2";
+import { Chart as ChartJS } from "chart.js/auto";
 import "../../../styles/Interface/Pages/Stats/Stats.css";
 
 const Stats = () => {
@@ -11,10 +12,19 @@ const Stats = () => {
     console.log("Zamontowany");
     console.log(data);
   }, [data]);
+  const userData = {
+    labels: data.map(),
+    datasets: [
+      {
+        label: "Users Tasks",
+        data: data.map((d) => d.task),
+      },
+    ],
+  };
 
   return (
     <div id="stats">
-      <Doughnut data={data} />
+      <Bar data={userData} />
     </div>
   );
 };
