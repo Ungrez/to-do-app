@@ -10,7 +10,7 @@ const NavBar = () => {
   return (
     <nav id="menu">
       <h3>ToDoApp</h3>
-      <NavLink to="/">
+      <NavLink to="/to-do-app">
         <PlaylistAddCheckIcon />
         <h4>Tasks</h4>
       </NavLink>
