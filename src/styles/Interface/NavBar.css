@@ -78,3 +78,33 @@ nav#menu a:hover:nth-child(5) svg {
     transform: translateX(0px);
   }
 }
+@media (min-width: 320px) and (max-width: 640px) {
+  nav#menu {
+    display: flex;
+    flex-direction: row;
+    transition: 0.3s;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+    animation: none;
+    box-shadow: 0 5px 20px 1px black;
+  }
+  nav#menu h3 {
+    display: none;
+  }
+  nav#menu a {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    animation: none;
+  }
+  nav#menu a.active {
+    transform: none;
+    animation: none;
+  }
+  nav#menu a:hover {
+    transform: none;
+  }
+  nav#menu svg {
+    font-size: 46px;
+  }
+}

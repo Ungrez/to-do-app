@@ -55,3 +55,18 @@ div#showTasks li.successedTasks {
 div#showTasks li.deletedTasks {
   color: rgb(181, 33, 33);
 }
+
+@media (min-width: 320px) and (max-width: 640px) {
+  div#popUpTasks {
+    width: 90vw;
+    height: 90vh;
+    padding: 10px;
+    overflow: auto;
+    overflow-x: overlay;
+    overflow-wrap: anywhere;
+  }
+  div#popUpTasks svg {
+    padding-top: 20px;
+    width: 40px;
+  }
+}

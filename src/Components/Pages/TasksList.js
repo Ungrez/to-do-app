@@ -13,53 +13,66 @@ const TaskList = ({ props }) => {
 
   const taskList = tasks.map((task, index) => (
     <li key={index}>
-      <div id="task">{task.title}</div>
-      <div className={task.priority} id="priority">
-        {task.priority === "" ? "None" : task.priority}
+      <div id="descriptions-task">
+        <div id="task">{task.title}</div>
+        <div className={task.priority} id="priority">
+          {task.priority === "" ? "None" : task.priority}
+        </div>
       </div>
-      <Button
-        onClick={() => {
-          dispatch({
-            type: "SUCCESS_TASK",
-            id: task.id,
-            setSuccTasks,
-            succTasks,
-          });
-        }}
-        variant="contained"
-        color="success"
-      >
-        Success
-      </Button>
-      <Button
-        onClick={() =>
-          dispatch({ type: "DELETE_TASK", id: task.id, setDelTasks, delTasks })
-        }
-        variant="outlined"
-        startIcon={<DeleteIcon />}
-      >
-        Delete
-      </Button>
+      <div id="buttons-container">
+        <Button
+          onClick={() => {
+            dispatch({
+              type: "SUCCESS_TASK",
+              id: task.id,
+              setSuccTasks,
+              succTasks,
+            });
+          }}
+          variant="contained"
+          color="success"
+        >
+          Success
+        </Button>
+        <Button
+          onClick={() =>
+            dispatch({
+              type: "DELETE_TASK",
+              id: task.id,
+              setDelTasks,
+              delTasks,
+            })
+          }
+          variant="outlined"
+          startIcon={<DeleteIcon />}
+        >
+          Delete
+        </Button>
+      </div>
     </li>
   ));
 
   return (
     <>
       <div id="table">
-        <h4>Active tasks</h4>
-        <h4>Priority</h4>
-        <ButtonGroup
-          sx={{ marginLeft: "auto" }}
-          variant="text"
-          aria-label="text button group"
-        >
-          <Button onClick={() => setPopUp({ show: true, type: "Successed" })}>
-            Successed tasks {succTasks.length}
-          </Button>
-          <Button onClick={() => setPopUp({ show: true, type: "Deleted" })}>
-            Deleted tasks {delTasks.length}
-          </Button>
-        </ButtonGroup>
+        <div id="about-task">
+          <h4>Active tasks</h4>
+          <h4>Priority</h4>
+        </div>
+        <div id="buttons-group">
+          <ButtonGroup
+            sx={{ marginLeft: "auto" }}
+            variant="text"
+            aria-label="text button group"
+          >
+            <Button onClick={() => setPopUp({ show: true, type: "Successed" })}>
+              Successed tasks {succTasks.length}
+            </Button>
+            <Button onClick={() => setPopUp({ show: true, type: "Deleted" })}>
+              Deleted tasks {delTasks.length}
+            </Button>
+          </ButtonGroup>
+        </div>
       </div>
       <div id="task-list">
         {taskList}

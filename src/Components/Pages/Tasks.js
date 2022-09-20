@@ -42,7 +42,6 @@ const Tasks = () => {
           id="outlined-basic"
           label="Add new task"
           variant="outlined"
-          sx={{ minWidth: 650 }}
           value={inputValue}
           onChange={(e) => {
             setInputValue(e.target.value);

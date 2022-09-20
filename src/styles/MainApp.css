@@ -19,3 +19,12 @@ main#container {
     box-shadow: 0 0 15px -8px black;
   }
 }
+@media (min-width: 320px) and (max-width: 640px) {
+  main#container {
+    flex-direction: column-reverse;
+    width: 100vw;
+    height: 100vh;
+    box-shadow: none;
+    border-radius: none;
+  }
+}

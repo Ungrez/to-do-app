@@ -10,7 +10,7 @@ const Page = () => {
   return (
     <div id="routes">
       <Routes>
-        <Route path="/to-do-app" element={<Tasks />}></Route>
+        <Route path="/tasks" element={<Tasks />}></Route>
         <Route path="/stats" element={<Stats />}></Route>
         <Route path="/shoping-list" element={<ShopingList />}></Route>
         <Route path="/settings" element={<Settings />}></Route>

@@ -8,8 +8,9 @@ const Settings = () => {
       <div className="placeButtons">
         <Button
           onClick={() => localStorage.clear()}
-          variant="outlined"
+          variant="contained"
           size="small"
+          color="info"
         >
           Clear localStorage
         </Button>
@@ -18,8 +19,9 @@ const Settings = () => {
       <div className="placeButtons">
         <Button
           onClick={() => localStorage.removeItem("delTasks")}
-          variant="outlined"
+          variant="contained"
           size="small"
+          color="info"
         >
           Clear deleted tasks
         </Button>
@@ -28,8 +30,9 @@ const Settings = () => {
       <div className="placeButtons">
         <Button
           onClick={() => localStorage.removeItem("succTasks")}
-          variant="outlined"
+          variant="contained"
           size="small"
+          color="info"
         >
           Clear successed tasks
         </Button>
