@@ -35,8 +35,8 @@ const Stats = () => {
         data: [successedTasks.length, deletedTasks.length, activeTasks.length],
         backgroundColor: [
           "rgba(79, 246, 77, 0.7)",
-          "rgba(249, 0, 0, 0.7)",
           "rgba(0, 133, 250, 0.7)",
+          "rgba(249, 0, 0, 0.7)",
         ],
       },
     ],
