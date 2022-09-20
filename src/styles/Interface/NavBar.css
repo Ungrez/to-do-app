@@ -1,7 +1,7 @@
 nav#menu {
   display: flex;
   flex-direction: column;
-  flex-basis: 20%;
+  /* flex-basis: 15%; */
   background: rgb(21, 49, 113);
   background: linear-gradient(
     180deg,
@@ -9,7 +9,7 @@ nav#menu {
     rgba(81, 168, 241, 1) 100%
   );
   transition: 0.3s;
-  border-radius: 20px 0 0 20px;
+  border-radius: 20px;
   color: #ffffff;
   align-items: center;
   gap: 10px;
