@@ -17,13 +17,13 @@ const PopUpTasks = ({ props }) => {
         <ul>
           {popUp.type === "Successed"
             ? succTasks.map((task) => (
-                <li className="successedTasks" key={task[0].id}>
-                  {task[0].title}
+                <li className="successedTasks" key={task.id}>
+                  {task.title}
                 </li>
               ))
             : delTasks.map((task) => (
-                <li className="deletedTasks" key={task[0].id}>
-                  {task[0].title}
+                <li className="deletedTasks" key={task.id}>
+                  {task.title}
                 </li>
               ))}
         </ul>

@@ -3,7 +3,6 @@ import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import DeleteIcon from "@mui/icons-material/Delete";
 import PopUpTasks from "./PopUpTasks";
-import { FetchData } from "./Stats/Data";
 import "../../styles/Interface/Pages/TaskList.css";
 
 const TaskList = ({ props }) => {
@@ -20,7 +19,6 @@ const TaskList = ({ props }) => {
       </div>
       <Button
         onClick={() => {
-          FetchData();
           dispatch({
             type: "SUCCESS_TASK",
             id: task.id,

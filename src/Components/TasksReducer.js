@@ -19,14 +19,21 @@ export const reducer = (tasks, action) => {
       ];
     case "DELETE_TASK":
       const delTask = tasks.filter((task) => task.id === action.id);
-
-      action.setDelTasks([...action.delTasks, delTask]);
+      const copyDel = Object.assign(...delTask, {
+        delDay: day,
+        delYear: year,
+      });
+      action.setDelTasks([...action.delTasks, copyDel]);
 
       return tasks.filter((task) => task.id !== action.id);
 
     case "SUCCESS_TASK":
       const succTask = tasks.filter((task) => task.id === action.id);
-      action.setSuccTasks([...action.succTasks, ...succTask]);
+      const copySucc = Object.assign(...succTask, {
+        succDay: day,
+        succYear: year,
+      });
+      action.setSuccTasks([...action.succTasks, copySucc]);
 
       return tasks.filter((task) => task.id !== action.id);
     case "EDIT_TASK":

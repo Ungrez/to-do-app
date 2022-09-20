@@ -1,23 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Bar } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto";
 import "../../../styles/Interface/Pages/Stats/Stats.css";
+import { date } from "../Stats/Data";
 
 const Stats = () => {
-  const [data] = useState(() => {
-    const localData = localStorage.getItem("dateTask");
-    return localData ? JSON.parse(localData) : [];
+  const defaultDays = date(new Date(), 7);
+  const successedTasks = JSON.parse(localStorage.getItem("succTasks"));
+  const deletedTasks = JSON.parse(localStorage.getItem("delTasks"));
+  const daysList = defaultDays.map((day) => new Date(day).getDate());
+
+  const dayContains = daysList.map((day) => {
+    return successedTasks.filter((obj) => obj.succDay === day);
   });
-  useEffect(() => {
-    console.log("Zamontowany");
-    console.log(data);
-  }, [data]);
+  const dataDays = dayContains.map((gut) => gut.length);
+
   const userData = {
-    labels: data.map(),
+    labels: daysList,
     datasets: [
       {
-        label: "Users Tasks",
-        data: data.map((d) => d.task),
+        label: "Successed Tasks",
+        data: dataDays,
       },
     ],
   };

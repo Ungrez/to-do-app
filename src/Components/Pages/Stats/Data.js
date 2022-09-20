@@ -1,17 +1,13 @@
-import { ActionTypes } from "@mui/base";
+export const date = (current, daysNumbers) => {
+  let week = [];
 
-export const FetchData = (action) => {
-  const storage = localStorage.getItem("dateTask");
-  let data = new Date();
-  let day = data.getDate();
-  let year = data.getFullYear();
-  let pushDate = { task: 1, day: day, year: year };
-  const allDatas = JSON.parse(localStorage.getItem("dateTask"));
+  current.setDate(current.getDate() - 6);
 
-  if (storage) {
-    return localStorage.setItem(
-      "dateTask",
-      JSON.stringify([...allDatas, pushDate])
-    );
-  } else return localStorage.setItem("dateTask", JSON.stringify([pushDate]));
+  for (var i = 0; i < daysNumbers; i++) {
+    week.push(new Date(current));
+    current.setDate(current.getDate() + 1);
+  }
+  //   console.log(week);
+
+  return week;
 };
