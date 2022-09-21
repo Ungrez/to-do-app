@@ -1,6 +1,6 @@
 ## Project avilable on
 
-https://ungrez.github.io/to-do-app/
+https://ungrez.github.io/to-do-app
 
 # Getting Started with Create React App
 
