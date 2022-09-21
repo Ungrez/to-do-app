@@ -22,3 +22,8 @@ div#input-field Button {
     padding: 15px;
   }
 }
+@media (min-width: 768px) and (max-width: 1024px) {
+  div#input-field {
+    margin-top: 0;
+  }
+}

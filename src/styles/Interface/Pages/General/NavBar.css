@@ -1,7 +1,6 @@
 nav#menu {
   display: flex;
   flex-direction: column;
-  /* flex-basis: 15%; */
   background: rgb(21, 49, 113);
   background: linear-gradient(
     180deg,
@@ -80,9 +79,7 @@ nav#menu a:hover:nth-child(5) svg {
 }
 @media (min-width: 320px) and (max-width: 640px) {
   nav#menu {
-    display: flex;
     flex-direction: row;
-    transition: 0.3s;
     padding: 10px;
     border-radius: 5px 5px 0 0;
     animation: none;
@@ -96,6 +93,30 @@ nav#menu a:hover:nth-child(5) svg {
     flex-direction: column;
     justify-content: space-evenly;
     animation: none;
+  }
+  nav#menu a.active {
+    transform: none;
+    animation: none;
+  }
+  nav#menu a:hover {
+    transform: none;
+  }
+  nav#menu svg {
+    font-size: 46px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  nav#menu {
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+    animation: none;
+    box-shadow: 0 5px 20px 1px black;
+    justify-content: center;
+    min-width: 200px;
+    border-radius: 0;
+  }
+  nav#menu h3 {
+    padding: 10px;
   }
   nav#menu a.active {
     transform: none;

@@ -70,3 +70,17 @@ div#showTasks li.deletedTasks {
     width: 40px;
   }
 }
+@media (min-width: 768px) and (max-width: 1024px) {
+  div#popUpTasks {
+    width: 90vw;
+    height: 90vh;
+    padding: 10px;
+    overflow: auto;
+    overflow-x: overlay;
+    overflow-wrap: anywhere;
+  }
+  div#popUpTasks svg {
+    padding-top: 20px;
+    width: 40px;
+  }
+}

@@ -18,10 +18,6 @@ const NavBar = () => {
         <BarChartIcon />
         <h4>Stats</h4>
       </NavLink>
-      <NavLink to="/shoping-list">
-        <ShoppingCartIcon />
-        <h4>Shopping</h4>
-      </NavLink>
       <NavLink to="/settings">
         <SettingsIcon />
         <h4>Settings</h4>

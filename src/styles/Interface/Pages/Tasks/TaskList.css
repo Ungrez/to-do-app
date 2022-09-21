@@ -146,3 +146,50 @@ div#task-list li:before {
     font-size: 16px;
   }
 }
+@media (min-width: 768px) and (max-width: 1024px) {
+  div#table {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    padding: 10px 0;
+  }
+  div#buttons-group {
+    margin-bottom: 10px;
+  }
+  div#table div#about-task h4:nth-child(1) {
+    flex-grow: 1;
+  }
+  div#table h4:nth-child(2) {
+    min-width: 100px;
+    text-align: center;
+    flex-basis: 20%;
+  }
+  div#buttons-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-basis: 100%;
+    margin: 20px;
+  }
+
+  div#task-list {
+    padding: 2px;
+    max-height: 55%;
+    overflow: auto;
+    overflow-y: overlay;
+    overflow-wrap: anywhere;
+  }
+  div#task-list li {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 5px 0;
+  }
+  div#task-list li div#priority {
+    min-width: 100px;
+    text-align: center;
+    align-self: center;
+    font-size: 16px;
+  }
+}
