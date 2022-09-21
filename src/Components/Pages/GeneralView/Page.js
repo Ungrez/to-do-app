@@ -1,10 +1,10 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Tasks from "./Pages/Tasks";
-import Stats from "./Pages/Stats/Stats";
-import ShopingList from "./Pages/ShopingList";
-import Settings from "./Pages/Settings";
-import "../styles/Interface/Page.css";
+import Tasks from "../../Pages/Tasks/Tasks";
+import Stats from "../../Pages/Stats/Stats";
+import ShopingList from "../../Pages/Shoping/ShopingList";
+import Settings from "../../Pages/Settings/Settings";
+import "../../../styles/Interface/Pages/General/Page.css";
 
 const Page = () => {
   return (

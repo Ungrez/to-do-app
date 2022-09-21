@@ -3,7 +3,7 @@ import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import DeleteIcon from "@mui/icons-material/Delete";
 import PopUpTasks from "./PopUpTasks";
-import "../../styles/Interface/Pages/TaskList.css";
+import "../../../styles/Interface/Pages/Tasks/TaskList.css";
 
 const TaskList = ({ props }) => {
   const [popUp, setPopUp] = useState({ show: false, type: "" });

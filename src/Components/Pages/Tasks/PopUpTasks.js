@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/Interface/Pages/PopUpTasks.css";
+import "../../../styles/Interface/Pages/Tasks/PopUpTasks.css";
 import CloseIcon from "@mui/icons-material/Close";
 import { useSpring, animated } from "react-spring";
 

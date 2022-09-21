@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Interface/NavBar.css";
+import "../../../styles/Interface/Pages/General/NavBar.css";
 import PlaylistAddCheckIcon from "@mui/icons-material/PlaylistAddCheck";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";

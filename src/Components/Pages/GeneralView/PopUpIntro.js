@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Button from "@mui/material/Button";
 import { useSpring, animated } from "react-spring";
-import woman from "../imgs/woman.jpg";
-import fridge from "../imgs/fridge.jpg";
-import "../styles/PopUpIntro.css";
+import woman from "../../../imgs/woman.jpg";
+import fridge from "../../../imgs/fridge.jpg";
+import "../../../styles/Interface/Pages/General/PopUpIntro.css";
 
 const PopUpIntro = ({ props }) => {
   const [nextSlide, setNextSlide] = useState(false);

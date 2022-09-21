@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "@mui/material/Button";
-import "../../styles/Interface/Pages/Settings.css";
+import "../../../styles/Interface/Pages/Settings/Settings.css";
 const Settings = () => {
   return (
     <div id="settings">

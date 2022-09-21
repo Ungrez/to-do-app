@@ -7,9 +7,9 @@ import {
   Select,
   MenuItem,
 } from "@mui/material";
-import "../../styles/Interface/Pages/Tasks.css";
+import "../../../styles/Interface/Pages/Tasks/Tasks.css";
 import TaskList from "./TasksList";
-import { reducer } from "../TasksReducer";
+import { reducer } from "../../TasksReducer";
 
 const Tasks = () => {
   const [inputValue, setInputValue] = useState("");
