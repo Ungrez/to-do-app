@@ -25,6 +25,10 @@ div#popUpFirst h2 {
   font-size: 20px;
   text-align: center;
   padding: 0 30px 30px;
+  font-weight: 500;
+}
+div#popUpFirst h4 {
+  font-weight: 500;
 }
 div#popUpFirst Button {
   align-self: center;
@@ -93,6 +97,7 @@ div#popUpFirst div#img-container img:nth-child(2) {
   }
   div#popUpFirst h4 {
     padding: 0 20px;
+    font-weight: 500;
   }
   div#popUpFirst Button#start {
     margin-top: 20px;

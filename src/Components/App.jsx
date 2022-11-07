@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../App.css";
-import MainApp from "../Components/Pages/GeneralView/MainApp";
-import PopUpIntro from "../Components/Pages/GeneralView/PopUpIntro";
+import MainApp from "./Pages/GeneralView/MainApp";
+import PopUpIntro from "./Pages/GeneralView/PopUpIntro";
 
 function App() {
   const [nextSlide, setNextSlide] = useState(false);

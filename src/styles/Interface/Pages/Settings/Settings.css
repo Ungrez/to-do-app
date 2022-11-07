@@ -17,6 +17,7 @@ div#settings div.placeButtons {
 div#settings div.placeButtons button {
   flex-basis: 25%;
   margin-right: 20px;
+  padding: 10px 15px;
 }
 div#settings div.placeButtons h5 {
   flex-grow: 4;
@@ -39,14 +40,14 @@ div#settings div.placeButtons h5 {
   }
   div#settings div.placeButtons button {
     flex-basis: 100%;
-    margin-right: 20px;
+    margin-right: 0;
   }
   div#settings div.placeButtons button {
     font-size: 18px;
   }
   div#settings div.placeButtons h5 {
     padding-top: 10px;
-    font-weight: normal;
-    font-size: 14px;
+    font-weight: 400;
+    font-size: 16px;
   }
 }

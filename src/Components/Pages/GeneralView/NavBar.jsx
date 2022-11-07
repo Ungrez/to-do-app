@@ -14,11 +14,11 @@ const NavBar = () => {
         <PlaylistAddCheckIcon />
         <h4>Tasks</h4>
       </NavLink>
-      <NavLink to="/stats">
+      <NavLink to="/to-do-app/stats">
         <BarChartIcon />
         <h4>Stats</h4>
       </NavLink>
-      <NavLink to="/settings">
+      <NavLink to="/to-do-app/settings">
         <SettingsIcon />
         <h4>Settings</h4>
       </NavLink>

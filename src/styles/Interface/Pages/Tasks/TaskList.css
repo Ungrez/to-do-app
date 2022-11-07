@@ -57,12 +57,14 @@ div#task-list li {
 div#task-list li div#task {
   flex-grow: 1;
   align-self: center;
+  font-weight: 500;
 }
 div#task-list li div#priority {
   flex-basis: 20%;
   text-align: center;
   align-self: center;
   font-size: 16px;
+  font-weight: 500;
 }
 div#buttons-group {
   flex-basis: 30%;

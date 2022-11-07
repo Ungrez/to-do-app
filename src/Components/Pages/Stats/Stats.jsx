@@ -2,7 +2,7 @@ import React from "react";
 import { Bar } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto";
 import "../../../styles/Interface/Pages/Stats/Stats.css";
-import { date } from "../Stats/Data";
+import { date } from "./Data";
 import { Doughnut } from "react-chartjs-2";
 
 const Stats = () => {
@@ -32,7 +32,7 @@ const Stats = () => {
     datasets: [
       {
         label: "General chart",
-        data: [successedTasks.length, deletedTasks.length, activeTasks.length],
+        data: [deletedTasks.length, successedTasks.length, activeTasks.length],
         backgroundColor: [
           "rgba(249, 0, 0, 0.7)",
           "rgba(79, 246, 77, 0.7)",

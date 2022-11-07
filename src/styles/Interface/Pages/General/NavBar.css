@@ -20,6 +20,10 @@ nav#menu h3 {
   font-size: 30px;
   padding: 50px 0;
 }
+nav#menu h4 {
+  font-weight: 500;
+  letter-spacing: 1.2px;
+}
 nav#menu a {
   width: 50%;
   justify-content: space-evenly;
@@ -29,6 +33,7 @@ nav#menu a {
   align-items: center;
   transition: 0.3s;
   animation: showNav 1.5s linear;
+  gap: 5px;
 }
 nav#menu a.active {
   transform: translateX(15px);
